@@ -1,6 +1,9 @@
-package main
+package leetcode
 
-import "fmt"
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 func hasCycle(head *ListNode) bool {
 	fast := head
@@ -13,8 +16,4 @@ func hasCycle(head *ListNode) bool {
 		}
 	}
 	return false
-}
-
-func main() {
-	fmt.Println("vim-go")
 }
