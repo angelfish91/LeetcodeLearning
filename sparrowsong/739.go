@@ -15,3 +15,29 @@ func dailyTemperatures(T []int) []int {
 	}
 	return res
 }
+
+// a better solution
+func dailyTemperatures2(T []int) []int {
+	ans := make([]int, len(T))
+	for idx := len(T) - 1; idx >= 0; idx-- {
+		if idx == len(T)-1 {
+			continue
+		}
+		if T[idx] < T[idx+1] {
+			ans[idx] = 1
+		} else {
+			x := idx + 1
+			for x < len(T) {
+				if T[idx] < T[x+ans[x]] {
+					ans[idx] = x + ans[x] - idx
+					break
+				}
+				if ans[x] == 0 {
+					break
+				}
+				x += ans[x]
+			}
+		}
+	}
+	return ans
+}
