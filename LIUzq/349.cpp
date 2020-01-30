@@ -27,3 +27,18 @@ public:
             //     }
             // i++;
             // }
+//方法二：
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        set<int> s;					//set的使用与定义
+        vector<int> result;
+        for(int i=0; i<nums1.size(); i++){
+            if(find(nums2.begin(), nums2.end(), nums1[i]) != nums2.end()){		//find函数使用
+                s.insert(nums1[i]);
+            }
+        }
+        result.assign(s.begin(), s.end());   //关于vector 的assign函数的使用
+        return result;
+    }
+};
