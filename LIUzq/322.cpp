@@ -30,6 +30,8 @@ public:
         // return dp[amount]/coins[0];
 
         return (dp[amount] == amount + 1) ? -1 : dp[amount];
+		//凡是能取到最小的，都是和dp[coins[]]有关的，
+		//比如coins={3,5,7}  dp[3],dp[0],dp[5],dp[7]或其倍数，dp[2],dp[4]都为amount+1，意为正无穷大，及不能刚好找开
     }
 };
 
