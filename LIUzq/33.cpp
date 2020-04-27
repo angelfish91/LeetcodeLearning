@@ -13,7 +13,7 @@ public:
 
             if (nums[l] <= nums[mid])
             {
-                if (target >= nums[l] && target < nums[mid])
+                if (target >= nums[l] && target < nums[mid])	//这里和mid的比较不用加=因为上面一旦相等就返回了
                     r = mid-1;
                 else
                     l = mid+1;
