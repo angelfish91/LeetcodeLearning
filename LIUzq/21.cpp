@@ -99,6 +99,8 @@ public:
         }
         else{
             l2->next = mergeTwoLists(l2->next, l1);
+			//这一句也可以，l2->next 的位置在前在后都可以！！
+			//l2->next = mergeTwoLists(l1, l2->next);
             return l2;
         }
     }
